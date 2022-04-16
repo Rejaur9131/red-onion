@@ -6,10 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import About from './Pages/About/About';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import Header from './Pages/Shared/Header/Header';
 
 function App() {
   return (
     <div className="App">
+      <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>

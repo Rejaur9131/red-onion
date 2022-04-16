@@ -35,7 +35,7 @@ const Header = () => {
             </Nav.Link>
 
             {user ? (
-              <Nav.Link as={Link} to="/login" onClick={handleSignOut} className="btn btn-danger text-white rounded-pill px-4">
+              <Nav.Link as={Link} to="/register" onClick={handleSignOut} className="btn btn-danger text-white rounded-pill px-4">
                 Sign Out
               </Nav.Link>
             ) : (
