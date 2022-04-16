@@ -3,8 +3,16 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo2.png';
 import { ShoppingCartIcon } from '@heroicons/react/outline';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   return (
     <div>
       <Navbar>
@@ -26,9 +34,15 @@ const Header = () => {
               Login
             </Nav.Link>
 
-            <Nav.Link as={Link} to="/register" className="btn btn-danger text-white rounded-pill px-4">
-              Sign Up
-            </Nav.Link>
+            {user ? (
+              <Nav.Link as={Link} to="/login" onClick={handleSignOut} className="btn btn-danger text-white rounded-pill px-4">
+                Sign Out
+              </Nav.Link>
+            ) : (
+              <Nav.Link as={Link} to="/register" className="btn btn-danger text-white rounded-pill px-4">
+                Sign Up
+              </Nav.Link>
+            )}
           </Nav>
         </Container>
       </Navbar>
