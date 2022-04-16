@@ -22,7 +22,7 @@ const Header = () => {
           </Navbar.Brand>
 
           <Nav>
-            <Nav.Link as={Link} to="about">
+            <Nav.Link as={Link} to="/cart">
               <ShoppingCartIcon height={30} width={30} />
             </Nav.Link>
 
