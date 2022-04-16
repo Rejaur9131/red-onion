@@ -18,11 +18,15 @@ const Header = () => {
               <ShoppingCartIcon height={30} width={30} />
             </Nav.Link>
 
-            <Nav.Link as={Link} to="login" className="me-1 h5">
+            <Nav.Link as={Link} to="/about" className="me-1 h5">
+              About
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/login" className="me-1 h5">
               Login
             </Nav.Link>
 
-            <Nav.Link as={Link} to="register" className="btn btn-danger text-white rounded-pill px-4">
+            <Nav.Link as={Link} to="/register" className="btn btn-danger text-white rounded-pill px-4">
               Sign Up
             </Nav.Link>
           </Nav>
